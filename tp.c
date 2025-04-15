@@ -27,6 +27,8 @@ int main()
     Nodo *listaTareasPendientes = CrearListaVacia();
     Nodo *listaTareasRealizadas = CrearListaVacia();
 
+
+    // punto 1
     int idSistema = 999;
     int confirma;
     int duracion;
@@ -50,6 +52,15 @@ int main()
         idSistema = T->TareaID;
         InsertarAlFinal(&listaTareasPendientes, T);
     } while (confirma == 1);
+
+
+    //punto 2
+    int id;
+    printf("Que tarea desea transferir? Ingrese id: \n");
+    scanf("%d", id);
+
+    Nodo *Nnodo = buscarNodo(listaTareasPendientes, id);
+    InsertarAlFinal(&Nnodo, T);
 
     return 0;
 }
